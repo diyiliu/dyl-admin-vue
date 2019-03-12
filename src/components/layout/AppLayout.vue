@@ -60,12 +60,12 @@
             icon: 'fa fa-user',
             children: [
               {
-                path: '/admin/other',
+                path: '/admin/menu1',
                 name: '基本信息',
                 icon: 'fa fa-info-circle'
               },
               {
-                path: '/admin/other',
+                path: '/admin/menu2',
                 name: '我的文档',
                 icon: 'icon-settings'
               }
@@ -79,7 +79,7 @@
     },
     watch: {
       $route(route) {
-        console.log(route);
+        // console.log(route);
       }
     },
   }

@@ -8,7 +8,7 @@
   export default {
     name: "home",
     mounted () {
-      Layout.init(); // init current layout
+      Layout.initFixedSidebar();// init current layout
     }
   }
 </script>

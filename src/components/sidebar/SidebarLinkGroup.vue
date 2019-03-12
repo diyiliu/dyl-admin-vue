@@ -1,10 +1,10 @@
 <template>
-  <li>
+  <li :class="liCls">
     <a>
       <slot name="title"></slot>
-      <span class="arrow"></span>
+      <span :class="arrowCls"></span>
     </a>
-    <ul class="sub-menu">
+    <ul class="sub-menu" ref="linkGroupWrapper">
       <slot></slot>
     </ul>
   </li>
@@ -13,8 +13,36 @@
 <script>
   export default {
     name: "sidebar-link-group",
-    props: {
-
+    props: {},
+    data() {
+      return {
+        expanded: this.expanded
+      }
+    },
+    mounted() {
+      let linkGroup = this.$refs.linkGroupWrapper;
+      if (linkGroup.querySelector('.active') !== null) {
+        this.expanded = true
+      }
+    },
+    watch: {
+      $route(route) {
+        this.expanded = false;
+      }
+    },
+    computed: {
+      liCls: function () {
+        return {
+          'open': this.expanded,
+          'active': this.expanded
+        }
+      },
+      arrowCls: function () {
+        return {
+          'arrow': true,
+          'open': this.expanded
+        }
+      }
     }
   }
 </script>

@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: "other",
+    name: "menu1",
     mounted () {
       Layout.initFixedSidebar();// init current layout
     }

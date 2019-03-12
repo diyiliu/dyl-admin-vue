@@ -4,6 +4,8 @@ import AppLayout from '@/components/layout/AppLayout'
 import Home from '@/components/pages/Home'
 import Hello from '@/components/pages/HelloWorld'
 import Other from '@/components/pages/Other'
+import Menu1 from '@/components/pages/Menu1'
+import Menu2 from '@/components/pages/Menu2'
 
 Vue.use(Router)
 
@@ -34,6 +36,16 @@ export default new Router({
         path: 'other',
         name: 'other',
         component: Other,
+        meta: [],
+      },{
+        path: 'menu1',
+        name: 'menu1',
+        component: Menu1,
+        meta: [],
+      },{
+        path: 'menu2',
+        name: 'menu2',
+        component: Menu2,
         meta: [],
       }]
     }

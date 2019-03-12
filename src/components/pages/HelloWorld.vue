@@ -92,7 +92,7 @@ export default {
     }
   },
   mounted () {
-    Layout.init(); // init current layout
+    Layout.initFixedSidebar();// init current layout
   }
 }
 </script>

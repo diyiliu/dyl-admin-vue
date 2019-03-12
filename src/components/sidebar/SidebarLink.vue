@@ -14,6 +14,21 @@
         type: String,
         default: 'router-link'
       }
+    },
+    watch: {
+      $route(route) {
+        this.$nextTick(() => {
+          const isActive = this.$children[0].$el.classList.contains('active')
+          if (!isActive) {
+            return
+          }
+          const linkGroup = this.$parent;
+          if (linkGroup.$options.name !== 'sidebar-link-group') {
+            return
+          }
+          linkGroup.expanded = true;
+        })
+      }
     }
   }
 </script>
