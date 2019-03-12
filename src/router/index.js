@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import DefaultLayout from '@/components/layout/DefaultLayout'
 import Home from '@/components/pages/Home'
 import Hello from '@/components/pages/HelloWorld'
+import Other from '@/components/pages/Other'
 
 Vue.use(Router)
 
@@ -13,22 +14,27 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: 'admin'
+      redirect: '/admin/home'
     },
     {
       path: '/admin',
       component: DefaultLayout,
-      name: '',
+      redirect: '/admin/home',
       children: [{
-        path: '',
+        path: 'home',
         name: 'home',
         component: Home,
         meta: [],
       },{
-        path: '/hello',
+        path: 'hello',
         name: 'hello',
         component: Hello,
-        meta: ['添加数据', '添加商铺'],
+        meta: [],
+      },{
+        path: 'other',
+        name: 'other',
+        component: Other,
+        meta: [],
       }]
     }
   ]

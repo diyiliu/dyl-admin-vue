@@ -80,18 +80,39 @@
               </form>
               <!-- END RESPONSIVE QUICK SEARCH FORM -->
             </li>
-              <router-link :to="{ name: 'home' }" tag="li">
-                <a>
-                <i class="icon-home"></i>
-                <span class="title">我的首页</span>
-                </a>
-              </router-link>
-              <router-link :to="{ name: 'hello' }" tag="li">
-                <a>
+
+            <sidebar-link :to="{ name: 'home' }">
+              <i class="icon-home"></i>
+              <span class="title">我的首页</span>
+            </sidebar-link>
+
+            <sidebar-link :to="{ name: 'hello' }">
+              <i class="icon-settings"></i>
+              <span class="title">API文档</span>
+            </sidebar-link>
+
+            <sidebar-link :to="{ name: 'other' }">
+              <i class="icon-lock"></i>
+              <span class="title">我的应用</span>
+            </sidebar-link>
+
+           <!--
+            <sidebar-link-group>
+              <template slot="title">
+                <i class="fa fa-cogs"></i>
+                <span class="title">应用管理</span>
+              </template>
+
+              <sidebar-link :to="{ name: 'hello' }">
                 <i class="icon-settings"></i>
                 <span class="title">API文档</span>
-                </a>
-              </router-link>
+              </sidebar-link>
+              <sidebar-link :to="{ name: 'other' }">
+                <i class="icon-lock"></i>
+                <span class="title">我的应用</span>
+              </sidebar-link>
+            </sidebar-link-group>
+            -->
           </ul>
           <!-- END SIDEBAR MENU -->
         </div>
@@ -122,14 +143,21 @@
 </template>
 
 <script>
+  import SidebarLink from '@/components/sidebar/SidebarLink'
+  import SidebarLinkGroup from '@/components/sidebar/SidebarLinkGroup'
+
   export default {
     name: "default-layout",
-    mounted () {
+    components: {
+      SidebarLink,
+      SidebarLinkGroup
+    },
+    mounted() {
 
     },
     watch: {
-      $route (route) {
-
+      $route(route) {
+        console.log(route);
       }
     },
   }
