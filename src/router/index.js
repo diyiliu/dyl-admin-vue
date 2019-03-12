@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import DefaultLayout from '@/components/layout/DefaultLayout'
+import AppLayout from '@/components/layout/AppLayout'
 import Home from '@/components/pages/Home'
 import Hello from '@/components/pages/HelloWorld'
 import Other from '@/components/pages/Other'
@@ -18,7 +18,7 @@ export default new Router({
     },
     {
       path: '/admin',
-      component: DefaultLayout,
+      component: AppLayout,
       redirect: '/admin/home',
       children: [{
         path: 'home',

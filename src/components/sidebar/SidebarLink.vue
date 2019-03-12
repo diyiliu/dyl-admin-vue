@@ -1,12 +1,7 @@
 <template>
-  <component :is="tag" tag="li" :to="to">
+  <component :is="tag" tag="li" v-bind="$attrs">
     <a>
-      <slot>
-        <!--
-        <i v-if="link.icon" :class="link.icon"></i>
-        <span class="title">{{link.name}}</span>
-        -->
-      </slot>
+      <slot></slot>
     </a>
   </component>
 </template>
@@ -15,23 +10,9 @@
   export default {
     name: "sidebar-link",
     props: {
-      to: {
-        type: Object,
-        required: true,
-      },
       tag: {
         type: String,
         default: 'router-link'
-      },
-      link: {
-        type: [String, Object],
-        default: () => {
-          return {
-            name: '',
-            path: '',
-            icon: ''
-          }
-        }
       }
     }
   }
