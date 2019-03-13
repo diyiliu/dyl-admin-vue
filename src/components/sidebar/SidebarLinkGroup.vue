@@ -4,7 +4,7 @@
       <slot name="title"></slot>
       <span :class="arrowCls"></span>
     </a>
-    <ul class="sub-menu" ref="linkGroupWrapper">
+    <ul class="sub-menu" ref="linkGroupWrapper" v-show="this.expanded">
       <slot></slot>
     </ul>
   </li>
