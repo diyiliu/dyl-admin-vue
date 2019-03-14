@@ -1,6 +1,6 @@
 <template>
   <div class="page-content">
-    测试
+    测试2
   </div>
 </template>
 

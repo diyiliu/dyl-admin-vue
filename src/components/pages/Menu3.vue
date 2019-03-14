@@ -1,12 +1,12 @@
 <template>
   <div class="page-content">
-    测试1
+    测试3
   </div>
 </template>
 
 <script>
   export default {
-    name: "menu1",
+    name: "menu3",
     mounted () {
       Layout.initFixedSidebar();// init current layout
     }

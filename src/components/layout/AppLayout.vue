@@ -70,6 +70,17 @@
                 icon: 'icon-settings'
               }
             ]
+          },
+          {
+            name: '系统管理',
+            icon: 'fa fa-config',
+            children: [
+              {
+                path: '/admin/menu3',
+                name: '用户管理',
+                icon: 'fa fa-user'
+              }
+            ]
           }
         ]
       }

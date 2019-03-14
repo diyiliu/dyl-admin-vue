@@ -6,6 +6,7 @@ import Hello from '@/components/pages/HelloWorld'
 import Other from '@/components/pages/Other'
 import Menu1 from '@/components/pages/Menu1'
 import Menu2 from '@/components/pages/Menu2'
+import Menu3 from '@/components/pages/Menu3'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
         path: 'menu2',
         name: 'menu2',
         component: Menu2,
+        meta: [],
+      },{
+        path: 'menu3',
+        name: 'menu3',
+        component: Menu3,
         meta: [],
       }]
     }
