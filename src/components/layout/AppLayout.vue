@@ -31,6 +31,23 @@
 </template>
 
 <script>
+  // css
+  import '@/assets/plugin/bootstrap-3.3.7/css/bootstrap.css'
+  import '@/assets/plugin/font-awesome-4.7.0/css/font-awesome.css'
+  import '@/assets/plugin/simple-line-icons/css/simple-line-icons.min.css'
+  import '@/assets/plugin/uniform/css/uniform.default.css'
+
+  import '@/assets/css/component.css'
+  import '@/assets/css/plugin.css'
+  import '@/assets/admin/layout/css/layout.css'
+  import '@/assets/admin/layout/css/themes/darkblue.css'
+
+  // js
+  import '@/assets/js/jquery-1.11.0.min.js'
+  import '@/assets/plugin/bootstrap-3.3.7/js/bootstrap.js'
+  import '@/assets/plugin/uniform/jquery.uniform.min.js'
+  import '@/assets/plugin/jquery-slimscroll/jquery.slimscroll.min.js'
+
   import AppSidebar from '@/components/sidebar/AppSidebar'
   import TopNavbar from '@/components/layout/TopNavbar'
   import AppFooter from '@/components/layout/AppFooter'
@@ -73,7 +90,7 @@
           },
           {
             name: '系统管理',
-            icon: 'fa fa-config',
+            icon: 'fa fa-cogs',
             children: [
               {
                 path: '/admin/menu3',
@@ -86,7 +103,11 @@
       }
     },
     mounted() {
-
+      // initiate layout and plugins
+      Metronic.init(); // init metronic core components
+      Layout.init(); // init current layout
+      QuickSidebar.init(); // init quick sidebar
+      Demo.init(); // init demo features
     },
     watch: {
       $route(route) {
