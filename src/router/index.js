@@ -8,6 +8,9 @@ import Menu1 from '@/components/pages/Menu1'
 import Menu2 from '@/components/pages/Menu2'
 import Menu3 from '@/components/pages/Menu3'
 
+import AuthLayout from '@/components/auth/AuthLayout'
+import Login from '@/components/auth/Login'
+
 Vue.use(Router)
 
 export default new Router({
@@ -15,6 +18,17 @@ export default new Router({
   linkActiveClass: 'active',
   linkExactActiveClass: 'active',
   routes: [
+    {
+      path: '/auth',
+      component: AuthLayout,
+      redirect: '/auth/login',
+      children: [
+        {
+          path: 'login',
+          component: Login,
+        }
+      ],
+    },
     {
       path: '/',
       redirect: '/admin/home'
